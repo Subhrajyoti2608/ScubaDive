@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Scuba Dive</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+        <script src="./components/rotation.js"></script>
+        <script src="./components/creatures.js"></script>
+    </head>
+    <body>
+        <a-scene background="color:#026F90">
+            <a-assets timeout="1000">
+<a-asset-item id="island" src="./animations/island/scene.gltf"></a-asset-item>
+<a-asset-item id="scuba" src="./animations/scuba_driver/scene.gltf"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="look" look-controls camera position="0 2 8">
+            </a-entity>
+
+            <a-entity id="tropic-island" gltf-model="#island" scale="0.1 0.1 0.1" position="0 -0.7 0" animation="property: position; to: 0 0 10; easing: linear; loop: true; dur: 150000" island-rotation fish turtle point></a-entity>
+
+            <a-entity id="scuba-driver" gltf-model="#scuba" position="0 1 6" scale="0.02 0.02 0.02" rotation="0 90 0" scuba-rotation></a-entity>
+        </a-scene>
+    </body>
+</html>
